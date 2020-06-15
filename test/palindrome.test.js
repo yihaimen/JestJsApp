@@ -27,4 +27,12 @@ describe('palindrome test', () => {
 
         expect(call).toThrow('Invalid argument');
     });
+
+    it('should throw an exception if argument is a', () => {
+        const call = () => {
+            isPalindrome('a');
+        };
+        
+        expect(call).toThrow('Single word');
+    });
 });
