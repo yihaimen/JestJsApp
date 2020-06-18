@@ -3,7 +3,7 @@ export const isPalindrome = (phrase) => {
         throw new Error('Invalid argument')
     }
 
-    if (phrase === 'a') {
+    if (phrase.length === '1') {
         throw new Error('Single word')
     }
 
