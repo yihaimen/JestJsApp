@@ -82,4 +82,3 @@ describe('test server side promise', () => {
         await expect(linesCountP('src/async/files.js')).rejects.toMatch('unable to open file src/async/files.js');
     });
 });
-
