@@ -22,3 +22,7 @@ export const createUrl = (lat, lon) => {
   }
   return `https://map.baidu.com/poi/@${lat},${lon}`;
 }; 
+
+export const setLocation = (windowObj, url) => {
+    windowObj.location = url;
+}
