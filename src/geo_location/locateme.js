@@ -26,3 +26,11 @@ export const createUrl = (lat, lon) => {
 export const setLocation = (windowObj, url) => {
     windowObj.location = url;
 }
+
+export const onSuccess = () => {};
+
+export const onError = () => {};
+
+export const locate = () => {
+    navigator.geolocation.getCurrentPosition(onSuccess, onError)
+};
