@@ -1,16 +1,15 @@
 import { locate, onError, onSuccess } from '../src/geo_location/locateme';
 describe('locate test', () => {
-    it('should register handlers with getCurrentPosition', (done) => {
-        const originalFunc = navigator.geolocation.getCurrentPosition;
+    it('should register handlers with getCurrentPosition', () => {
+        let originNavigator = navigator.geolocation;
 
-        navigator.geolocation.getCurrentPosition = (success, error) => {
-            expect(success).toEqual(onSuccess);
-            expect(error).toEqual(onError);
-            done();
-        }
+        navigator.geolocation = {
+            getCurrentPosition: jest.fn()
+        };
 
         locate();
+        expect(navigator.geolocation.getCurrentPosition).toHaveBeenCalled()
 
-        navigator.geolocation.getCurrentPosition = originalFunc;
+        navigator.geolocation = originNavigator;
     });
 });
