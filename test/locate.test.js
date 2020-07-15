@@ -1,4 +1,4 @@
-import { locate, onError, onSuccess } from '../src/geo_location/locateme';
+import { locate } from '../src/geo_location/locateme';
 describe('locate test', () => {
     it('should register handlers with getCurrentPosition', () => {
         let originNavigator = navigator.geolocation;

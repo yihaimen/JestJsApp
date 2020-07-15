@@ -29,7 +29,9 @@ export const setLocation = (windowObj, url) => {
 
 export const onSuccess = (position) => {};
 
-export const onError = (error) => {};
+export const onError = (error) => {
+    document.getElementById('error').innerHTML = error.message;
+};
 
 export const locate = () => {
     navigator.geolocation.getCurrentPosition(onSuccess, onError)
